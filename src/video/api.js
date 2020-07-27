@@ -21,6 +21,10 @@ export const setVolume = (videoEl, state, value) => {
     videoEl.volume = value;
 };
 
+export const setPlaybackRate = (videoEl, value) => {
+    videoEl.playbackRate = value;
+};
+
 export const mute = (videoEl) => {
     videoEl.muted = true;
 };

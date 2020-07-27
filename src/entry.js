@@ -6,6 +6,7 @@ import DefaultPlayer, {
     Volume,
     Captions,
     PlayPause,
+    PlaybackRate,
     Fullscreen,
     Overlay
 } from './DefaultPlayer/DefaultPlayer';
@@ -19,6 +20,7 @@ export {
     Volume,
     Captions,
     PlayPause,
+    PlaybackRate,
     Fullscreen,
     Overlay
 };

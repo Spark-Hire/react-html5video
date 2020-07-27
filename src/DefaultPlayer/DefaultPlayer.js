@@ -9,6 +9,7 @@ import {
     toggleMute,
     togglePause,
     setCurrentTime,
+    setPlaybackRate,
     toggleFullscreen,
     getPercentagePlayed,
     getPercentageBuffered
@@ -20,6 +21,7 @@ import Volume from './Volume/Volume';
 import Captions from './Captions/Captions';
 import PlayPause from './PlayPause/PlayPause';
 import Fullscreen from './Fullscreen/Fullscreen';
+import PlaybackRate from './PlaybackRate/PlaybackRate';
 import Overlay from './Overlay/Overlay';
 
 const DefaultPlayer = ({
@@ -36,6 +38,7 @@ const DefaultPlayer = ({
     onPlayPauseClick,
     onFullscreenClick,
     onCaptionsItemClick,
+    onPlaybackRateItemClick,
     ...restProps
 }) => {
     return (
@@ -89,6 +92,12 @@ const DefaultPlayer = ({
                                         ariaLabelUnmute={copy.unmute}
                                         ariaLabelVolume={copy.volume}
                                         {...video} />;
+                                case 'PlaybackRate':
+                                    return <PlaybackRate
+                                        key={i}
+                                        onItemClick={onPlaybackRateItemClick}
+                                        ariaLabel={copy.playbackRate}
+                                        {...video} />;
                                 case 'Captions':
                                     return video.textTracks && video.textTracks.length
                                         ? <Captions
@@ -108,7 +117,7 @@ const DefaultPlayer = ({
     );
 };
 
-const controls = ['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen', 'Captions'];
+const controls = ['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen', 'Captions', 'PlaybackRate'];
 
 DefaultPlayer.defaultProps = {
     copy,
@@ -145,6 +154,7 @@ const connectedPlayer = videoConnect(
         onPlayPauseClick: () => togglePause(videoEl, state),
         onCaptionsItemClick: (track) => showTrack(state, track),
         onVolumeChange: (e) => setVolume(videoEl, state, e.target.value),
+        onPlaybackRateItemClick: (rate) => setPlaybackRate(videoEl, rate),
         onSeekChange: (e) => setCurrentTime(videoEl, state, e.target.value * state.duration / 100)
     })
 );
@@ -157,6 +167,7 @@ export {
     Volume,
     Captions,
     PlayPause,
+    PlaybackRate,
     Fullscreen,
     Overlay
 };
