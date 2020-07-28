@@ -18,7 +18,7 @@ export default ({ playbackRate, onClick, onItemClick, className, ariaLabel }) =>
                         {`${playbackRate.toFixed(1)}x`}
                     </button>
                     <ul className={styles.rateList}>
-                        { PLAYBACK_RATES.reverse().map((rate) => (
+                        { PLAYBACK_RATES.map((rate) => (
                             <li
                                 key={rate}
                                 className={styles.rateItem}
