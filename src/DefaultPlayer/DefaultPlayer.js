@@ -117,7 +117,7 @@ const DefaultPlayer = ({
     );
 };
 
-const controls = ['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen', 'Captions', 'PlaybackRate'];
+const controls = ['PlayPause', 'Seek', 'Time', 'PlaybackRate', 'Volume', 'Fullscreen', 'Captions'];
 
 DefaultPlayer.defaultProps = {
     copy,
