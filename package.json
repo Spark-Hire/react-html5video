@@ -1,6 +1,6 @@
 {
   "name": "@spark-hire/react-html5video",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "A customizeable HTML5 Video",
   "main": "dist",
   "files": [
