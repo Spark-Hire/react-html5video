@@ -26,7 +26,6 @@ class App extends Component {
                     <li className={styles.videoListItem}>
                         <Video
                             autoPlay
-                            controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen', 'PlaybackRate', 'Captions']}
                             ref="video1"
                             onPlay={() => {
                                 this.refs.video2.videoEl.pause();
